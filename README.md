@@ -1,3 +1,8 @@
+1. SQL is mainly used for relational databases. There really is no distinct differences between them
+2. A primary key is a unique identifier for every entry that is in a table
+3. foreign key
+4. A third table that links foreign keys from both many to many tables.
+
 # Sprint Challenge: Node DB Sprint
 
 ## Description
