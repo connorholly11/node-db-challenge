@@ -1,11 +1,15 @@
 exports.up = function(knex) {
   return knex.schema
-    .createTable("projects", tbl => {
+    .createTable("project", tbl => {
+      tbl.increments();
+
       tbl.string("name").notNullable();
       tbl.text("description");
       tbl.boolean("completed").defaultTo(0);
     })
     .createTable("task", tbl => {
+      tbl.increments();
+
       tbl.text("description").notNullable();
       tbl.text("note");
       tbl.boolean("completed").defaultTo(0);
@@ -14,9 +18,11 @@ exports.up = function(knex) {
         .unsigned()
         .notNullable()
         .references("id")
-        .inTable("projects");
+        .inTable("project");
     })
     .createTable("resource", tbl => {
+      tbl.increments();
+
       tbl.string("name").notNullable();
       tbl.text("description");
     });

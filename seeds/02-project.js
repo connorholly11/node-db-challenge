@@ -1,10 +1,10 @@
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex("projects")
+  return knex("project")
     .truncate()
     .then(function() {
       // Inserts seed entries
-      return knex("projects").insert([
+      return knex("project").insert([
         {
           name: "connor",
           description: "Finish the data models project",

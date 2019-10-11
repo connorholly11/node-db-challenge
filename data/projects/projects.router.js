@@ -16,4 +16,19 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/:id", (req, res) => {
+  const id = req.params.id;
+
+  db.getProjectsId(id)
+    .then(project => {
+      res.status(200).json(project);
+    })
+    .catch(error => {
+      res.status(500).json({
+        error: error,
+        message: "500 error on getting project ID"
+      });
+    });
+});
+
 module.exports = router;
